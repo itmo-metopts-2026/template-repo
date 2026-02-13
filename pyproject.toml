@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "optcourse"
+version = "0.1.0"
+description = "Лабораторные работы по курсу «Продвинутые методы оптимизации»"
+authors = ["Студент <student@university.edu>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.26.4"
+matplotlib = "^3.9.2"
+jupyterlab = "^4.2.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.8.0"
+ruff = "^0.6.9"
+pre-commit = "^3.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# =============================================
+# Настройки Black
+# =============================================
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+# =============================================
+# Настройки Ruff
+# =============================================
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "D",   # pydocstyle
+    "UP",  # pyupgrade
+]
+ignore = [
+    "D100", # отсутствие docstring в модуле (допустимо для __init__)
+    "D104", # отсутствие docstring в пакете
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# =============================================
+# Настройки Pytest
+# =============================================
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["labs"]

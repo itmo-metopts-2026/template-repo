@@ -45,9 +45,13 @@ make install
 Команда `make install` выполнит `poetry install`, создаст виртуальное окружение
 и установит все зависимости с точными версиями из `poetry.lock`.
 
+**На Windows** вместо `make` используйте скрипт `run.bat` из корня репозитория — см. раздел [«На Windows»](#на-windows).
+
 ---
 
 ## Запуск
+
+### На Linux/MacOS
 
 ### JupyterLab
 
@@ -58,7 +62,6 @@ make jupyter
 Команда запустит JupyterLab с корневой директорией `labs/`.
 Откройте нужный notebook в браузере.
 
-
 ### Линтинг и форматирование
 
 ```bash
@@ -68,6 +71,22 @@ make lint
 # Автоформатирование
 make format
 ```
+
+### На Windows
+
+Команда `make` в Windows по умолчанию недоступна. В репозитории есть скрипт **`run.bat`** — запускайте его из **cmd** или **PowerShell** в корне проекта:
+
+```bat
+run.bat install    Установка зависимостей
+run.bat jupyter    Запуск JupyterLab
+run.bat lint       Проверка кода
+run.bat format     Форматирование кода
+run.bat clean      Удаление кэша (__pycache__, .pytest_cache и т.д.)
+```
+
+Без дополнительных установок: нужны только Python 3.11+ и [Poetry](https://python-poetry.org/docs/#installation).
+
+Если по какой-то причине `run.bat` не запускается, можно вызывать команды напрямую: `poetry install`, `poetry run jupyter lab --notebook-dir=labs` и т.д.
 
 ---
 
@@ -125,7 +144,7 @@ model.LinearRegression()
 
 3. **Закоммитьте и запушьте в Git**:
    ```bash
-   git checkout labN 
+   git checkout -b labN 
    git add .
    git commit -m "Лабораторная работа N: краткое описание"
    git push origin labN

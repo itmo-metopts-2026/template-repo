@@ -38,7 +38,7 @@ make jupyter
 2. Из корня репозитория: `make lint` (при ошибках — `make format`).
 3. Закоммитьте и запушьте:
    ```bash
-   git checkout lab2
+   git checkout -b lab2
    git add .
    git commit -m "Лабораторная работа 2"
    git push origin main

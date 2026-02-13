@@ -2,9 +2,9 @@
 name = "optcourse"
 version = "0.1.0"
 description = "Лабораторные работы по курсу «Продвинутые методы оптимизации»"
-authors = ["Студент <student@university.edu>"]
+authors = ["Студент>"]
 readme = "README.md"
-packages = []
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"

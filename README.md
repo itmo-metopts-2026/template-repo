@@ -128,9 +128,10 @@ model.LinearRegression()
 
 3. **Закоммитьте и запушьте в Git**:
    ```bash
+   git checkout labN 
    git add .
    git commit -m "Лабораторная работа N: краткое описание"
-   git push origin main
+   git push origin labN
    ```
 
    Затем создайте Pull Request на GitHub.

@@ -10,11 +10,14 @@
 | `results/figures/` | Сохранённые графики |
 
 ## Как начать
-
+0. Переключитесь на ветку текущей лабораторной
+```bash
+git checkout lab1
+```
 1. Изучите пример оформления в [`labs/example/`](../example/)
 2. Реализуйте алгоритм в `model.py`
 3. Проведите эксперименты в `research.ipynb`
-4. Напишите отчёт в `report.md`
+4. Напишите отчёт в `report.md` или `report.pdf`
 
 ## Запуск
 
@@ -35,7 +38,8 @@ make jupyter
 2. Из корня репозитория: `make lint` (при ошибках — `make format`).
 3. Закоммитьте и запушьте:
    ```bash
-   git add labs/lab1/
+   git checkout lab1
+   git add .
    git commit -m "Лабораторная работа 1"
    git push origin main
    ```
